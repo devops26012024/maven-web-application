@@ -1,0 +1,85 @@
+pipeline{   //in scripted we use node{}
+        agent any //Here we are going to use this agent any and stages and steps 
+        tools{
+                maven 'maven3.9.6' //In scripted pipeline we use one variable, but here we use tools section 
+              }
+
+                echo "The Job name is: ${env.JOB_NAME}"
+                echo "The Nod ename is: ${env.NODE_NAME}"
+                echo "The Build Number is: ${env.BUILD_NUMBER}"
+                echo "The Jenkins Home directory is: ${JENKINS_HOME}"
+        stages{
+                stage('CheckOuteCode'){
+                                        steps{
+                                                sendSlackNotifications("STARTED")
+                                                git branch: 'development', credentialsId: '57ac23d7-d6c0-47bb-9807-44e5028f059f', url: 'https://github.com/devops26012024/maven-web-application.git'
+                                              }
+                                        }
+                stage('Build'){
+                                steps{
+                                        sh "mvn clean package"
+                                      }
+                                 }
+
+                //Execute SonarQube Report
+               /* stage('ExecuteSonarQubeReport'){
+                                                    steps{
+                                                            sh "mvn clean sonar:sonar"
+                                                           }
+                                                     }
+                // Upload Artifcats into Nexus
+                stage('UploadArtifcatsIntoNexus'){
+                                                        steps{
+                                                                sh "mvn clean deploy"
+                                                               }
+                                                       }
+
+                //Deploy App into Tomcat Server
+                stage('DeployAppIntoTomcat'){
+                                                    steps{
+                                                            sshagent(['53f4a4fc-ffc0-4ceb-8a23-3ea01753ad8f']) {
+                                                                                                                            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.32.187:/opt/apache-tomcat-9.0.86/webapps/"
+                                                                                                                        }
+                                                           }
+                                                } */
+
+                        } //stages closing 
+        
+    post {
+  success {
+                sendSlackNotifications(currentBuild.result)
+            }
+  failure {
+                sendSlackNotifications(currentBuild.result)
+            }
+        }
+
+}// pipeline closing 
+
+    def sendSlackNotifications(String buildStatus = 'STARTED') {
+  // build status of null means successful
+  buildStatus =  buildStatus ?: 'SUCCESS'
+
+  // Default values
+  def colorName = 'RED'
+  def colorCode = '#FF0000'
+  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'" //env variable is accessible from groovy code there are some inbuilt variable 
+             //these are all env variable JOB_NAME,       
+  def summary = "${subject} (${env.BUILD_URL})"
+
+  // Override default values based on build status
+  if (buildStatus == 'STARTED') {
+    color = 'YELLOW'
+    colorCode = '#FFFF00'
+  } else if (buildStatus == 'SUCCESS') { 
+    color = 'GREEN'
+    colorCode = '#00FF00'
+  } else {
+    color = 'RED'
+    colorCode = '#FF0000'
+  }
+
+  // Send notifications
+  slackSend (color: colorCode, message: summary, channel : "citibank-project") // Here we can mention channel name. This is inbuilt function, once you install slack notification plugin it is going to available here 
+  }
+    
