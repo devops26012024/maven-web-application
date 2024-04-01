@@ -4,10 +4,6 @@ pipeline{   //in scripted we use node{}
                 maven 'maven3.9.6' //In scripted pipeline we use one variable, but here we use tools section 
               }
 
-               sh echo "The Job name is: ${env.JOB_NAME}"
-               sh echo "The Nod ename is: ${env.NODE_NAME}"
-               sh echo "The Build Number is: ${env.BUILD_NUMBER}"
-               sh echo "The Jenkins Home directory is: ${JENKINS_HOME}"
         stages{
                 stage('CheckOuteCode'){
                                         steps{
