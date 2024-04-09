@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.110.183.64:9535/pradeep/repository/citibank-release/</url>
+	      <url>http://13.232.97.153:9535/pradeep/repository/citibank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.110.183.64:9535/pradeep/repository/citibank-snapshot/</url>
+	      <url>http://13.232.97.153:9535/pradeep/repository/citibank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
