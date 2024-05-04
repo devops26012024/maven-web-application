@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies Pvt Ltd. Sri Satya Sai (Dist),Andhra Pradesh,India </h1>
+<h1 align="center">Welcome to  Technologies Pvt Ltd. Sri Satya Sai (Dist),Andhra Pradesh,India </h1>
 <h1 align="center"> GitHub Webhook demo -  New DevOps with AWS  Batch will start on April Deepthi married Pradeep and Diya Pradeep
 trying webhook concept Srikanth anniversary treat is also there IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com</h1> 
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
