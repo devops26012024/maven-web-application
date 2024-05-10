@@ -1,0 +1,36 @@
+pipeline{   
+        agent any 
+        tools{
+                maven 'maven3.9.6' 
+              }
+        stages{
+                stage('CheckOuteCode'){
+                                        steps{
+                                              
+                                                git credentialsId: 'f4faf106-b7ac-4093-8573-4ec7afa236f0', url: 'https://github.com/devops26012024/maven-web-application.git'
+                                              }
+                                        }
+                stage('Build'){
+                                        steps{
+                                                sh "mvn clean package"
+                                      }
+                                 }
+
+                stage("RunUnittestCasesandBuild"){ //RunUnittestCasesandBuild can be given any name 
+                                        steps{
+                                                parallel(
+                                                            Test: {  //here given Test but any name can be given
+                                                                    sh "mvn test"
+                                                                    }, //, indicates one more stage is there to execute parallely
+                                                            Build: {  //here given Build but any name can be given
+                                                                    sh "mvn clean package"
+                                                                    } // Here no need to mention , as its last. Suppose if one more stage is there then put , 
+                                                          )
+                                                }
+                                          }
+
+                            														                                                                                            
+							 }
+					    
+                 
+               }
