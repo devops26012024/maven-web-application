@@ -15,6 +15,11 @@ pipeline{
                                                 sh "mvn clean package"
                                       }
                                  }
+		stage('TriggerJobB'){
+                                        steps{
+                                                build job: 'Job-B'
+                                              }
+                                    }  
                /* stage('ExecuteSonarQubeReport'){
                                                     steps{
                                                             sh "mvn clean sonar:sonar"
