@@ -29,6 +29,5 @@ spec:
   selector:
     app: mavenwebapp
   ports:
-  - port:80 
-    targetPort: 8080        
-    
+  - port: 80 
+    targetPort: 8080
