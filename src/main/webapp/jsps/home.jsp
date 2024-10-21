@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Pr Technologies Pvt Ltd. Ph No: +91-9980923226, +91-9980923216, +91-9900012028  Bengaluru,Karnataka,India.</h1>
-<h1 align="center"> Mithun Technologies- Very Good boy Pradeep Pradeep PradeTraining center for DevOps with AWS,Python & AWS Solution Architect in Bangalore India.Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to Pr Technologies Pvt Ltd. Ph No: +91-9535311488 Bengaluru,Karnataka,India.</h1>
+<h1 align="center"> Pradeep - Very Good for DevOps with AWS,Python & AWS Solution Architect in Bangalore India.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
