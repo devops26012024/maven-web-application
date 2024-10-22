@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Pr Technologies Pvt Ltd. Ph No: +91-9535311488 Bengaluru,Karnataka,India.</h1>
-<h1 align="center"> Pradeep - Very Good for DevOps with AWS,Python & AWS Solution Architect in Bangalore India.</h1>
+<h1 align="center">Welcome to interview Pradeep Ph No: +91-9535311488 Bengaluru,Karnataka,India.</h1>
+<h1 align="center"> Pradeep - Very Good for DevOps with AWS & AWS Solution Architect in Bangalore India.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
