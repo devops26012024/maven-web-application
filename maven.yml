@@ -14,7 +14,7 @@ spec:
         app: mavenwebapp
     spec:
       containers:
-      - name: mavenapp
+      - name: mavenwapp
         image: pkumard4/maven:latest
         ports:  
         - containerPort: 8080
