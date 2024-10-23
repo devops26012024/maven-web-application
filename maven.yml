@@ -16,7 +16,6 @@ spec:
       containers:
       - name: mavenapp
         image: pkumard4/maven:latest
-        imagePullPolicy: Always
         ports:  
         - containerPort: 8080
 ---
